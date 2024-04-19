@@ -4,8 +4,12 @@
 Created on Fri Apr 19 15:14:31 2024
 @author: pauline
 
-Extraction de 50 commentaires sur le jeu "Starfield" depuis sa page steam.
-Utilisation de request
+Extraction de 50 commentaires sur le jeu "Starfield" depuis sa page steam :
+-> Utilisation de request pour récupérer les données brutes
+-> reformatage :
+    - organisation des données dans un format proche du corpus étudié
+    - équilibrage : autant de review positives que négatives
+-> output en csv ou json
 """
 import argparse, requests, json, csv, datetime
 

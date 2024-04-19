@@ -85,6 +85,31 @@ def reformatage(reviews:list[dict])->list:
     return review_eq
     
 
+def write_csv(data:list[dict], output_file):
+    """enregistrement des reviews en csv"""
+    
+    with open(output_file, 'w', newline='', encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerow(
+            ["customer_id", "helpful_vote", "product_id", "product_title",
+             "review_body", "review_date", "review_id", "score",
+             "steam_purchase", "received_for_free"
+                             ])
+        for review in data :
+            writer.writerow(review.values())
+            
+    return print(f"{len(data)} reviews dans {output_file}.")
+
+
+def write_json(data:list[dict], output_file):
+    """enregistrement des reviews en json"""
+    with open(output_file, "w") as file:
+        reviews = {'reviews': data} 
+        json.dump(reviews, file, indent=2)
+
+    return print(f"{len(data)} reviews dans {output_file}.")
+
+
 def main(args):
     
     url = "https://store.steampowered.com/appreviews/1716740?json=1"
@@ -92,22 +117,11 @@ def main(args):
     reviews_formatees = reformatage(brut)
     
     if args.csv :
-        with open(args.output_file, 'w', newline='', encoding="utf-8") as file:
-            writer = csv.writer(file)
-            writer.writerow(
-                ["customer_id", "helpful_vote", "product_id", "product_title",
-                 "review_body", "review_date", "review_id", "score",
-                 "steam_purchase", "received_for_free"
-                             ])
-            for review in reviews_formatees :
-                writer.writerow(review.values())
-
+        write_csv(reviews_formatees, args.output_file)
     else:
-        with open(args.output_file, "w") as file:
-            reviews = {'reviews':reviews_formatees} 
-            json.dump(reviews, file, indent=2)
+        write_json(reviews_formatees,args.output_file)
             
-    return print(f"{len(reviews_formatees)} reviews dans {args.output_file}.")
+    return print("fin du script")
         
 
 if __name__ == "__main__":

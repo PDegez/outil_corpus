@@ -19,9 +19,10 @@ corpus : Dataset
 """
 
 import argparse
-from datasets import Dataset
+
 import pandas as pd
-        
+from datasets import Dataset
+
 
 def main(chemin_input):
     chemin = args.input_file
@@ -34,12 +35,11 @@ def main(chemin_input):
         return print("Ce script prend un csv ou un json en entrée")
     dataset = Dataset.from_pandas(data)
     print(dataset)
-        
+
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="transformer en dataset")
+    parser = argparse.ArgumentParser(description="transformer en dataset")
     parser.add_argument("input_file", help="Chemin de l'input")
     args = parser.parse_args()
-    
+
     main(args)

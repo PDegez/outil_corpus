@@ -1,0 +1,84 @@
+---
+task_categories:
+- categorization
+language:
+- en
+pretty_name: Steam Starfield Review Dataset
+size_categories:
+- 10K<n<100K
+---
+
+# Dataset Card for Dataset Name
+
+Ce dataset est constitué de 50 commentaires Steam du jeu "Starfield".
+
+## Dataset Details
+
+### Dataset Description
+
+Ce dataset comprend les colonnes suivantes :
+
+'customer_id' : identifiant steam du commentateur (str)
+'helpful_vote : nombre de fois que ce commentaire a été voté comme utile (int)
+'product_id : identifiant steam du produit (str)
+'product_title : titre du jeu. Ici, dans les faits, il s'agira toujours de Starfield (str)
+'review_body' : corps du commentaire (str)
+'review_date': date du commentaire (str)
+'review_id': 'identifiant steam du commentaire (str)
+'score': score du jeu attribué par le commentateur. Deux scores possibles : positif (1) et négatif(0) (bool)
+'steam_purchase': indique si le jeu a été acheté sur steam (achat vérifié) ou non (bool)
+'received_for_free': indique si le jeu a été reçu gratuitement (streamers, journalistes) (bool)
+
+
+Exemple :
+
+'customer_id': '76561197990951542',
+'helpful_vote': 3430,
+'product_id': '1716740',
+'product_title': 'Starfield',
+'review_body': '77hrs in : " finish " starfield . \n\n now , it have a ng+ mode which be intriguing , so I be actually still play it ... but the story actively encourage you to finish it multiple time .. and restart over and over and over , which be ... curious . so I be onboard . \n\n I be still on the fence about the title as a whole . \n\n enjoy it ? yes , very much . \n\n but it be hard to compare to previous title ( such as Fallout4 ) because I end up play those in a heavily modde state , which skew my memory of the raw , unmodded game . \n\n Starfield be currently raw and unmodded . it be an RPG . it be a story . it be not about exploration , space flight , or space trucking . it be an adventure . it have a story and you be a participant . \n\n the Bethesda feel be here in spade , and that include a clunky interface with awful / useless filter and option ( gadamn Bethesda , will you grow up and modernize this already ? jesus ) \n\n there be some bug . even after a year of testing , I have encounter a couple of showstopper . there be some annoying quirk I be surprised do not get address in the 1 year of polish they go through . \n\n I think Bethesda have also back themselves into a corner with their Creation Engine 2 . it be essentially the same architecture as CE # 1 , with all the same limitation . the concept of \' cell \' for build transition , or area transition be ... old . so to completely rebuild their engine , but to do so in a way that have a old , outdated architecture be a weird decision that I think will box they in for the decade to come . all of their future game may be " well " , but they will all " feel old " . \n\n move into a building ? loading screen . \n move out ? loading screen . \n board ship ? loading screen . \n take off form the planet ? loading screen . \n fly to another system ? loading screen . \n fly to another planet ? loading screen \n Land ? loading screen . \n enter the mining facility ? loading screen . \n room inside the facility ? loading screen . \n\n it end up feel very much like a series of interconnect \' cell \' where you get to do thing before you transition to the next cell . \n\n and in a world where game have demonstrate the ability to transition more smoothly - even invisibly - I question why Bethesda have hang their hat on such an archaic way of do thing . \n\n it make their large game yet feel " small " . \n\n blast across the universe across multiple planetary system be ... a loading screen . and I be not talk about the ability to fast travel and skip everything , but simply go from A->B be ... a loading screen . every time . \n\n there be no planetary exploration and anyone who say otherwise be misguide . planet be procedurally generate . you land in a cell . that cell have boundary . that cell will be populate with a very limited set of re - use poi ( one day I get the same POI 3 time ) . \n\n the novelty of the first exploration morph into routine as you realize that basically you have land in a medium sized procedurally generate terrain cell with half a dozen random thing throw in it for you to walk to and explore . it feel like a sandbox a dev might make up as a proof of concept . \n\n want to move a little furth \' east \' to explore more ? take off ( loading ) click a new area , land ( loading ) and you get a new cell with a sprinkle of poi in it . enjoy . \n\n and far , far , far too much of the \' quest structure \' be fetch quest , and I will fight anyone who disagree with I on that . faaaaaaaaaaaaaaar too many fetch - style quest . heck , the main effing story be a fetch quest . explore a planet be a fetch quest , where you do not know where anything be and you might spend 2 hrs try to figure out where that last " 1 fauna of 9 " be locate ... while eff walk everywhere . Te - di - ous . \n\n I have always feel that Bethesda create great experience , and even well foundation for modder to go nuts with , and it be the modded experience that really make it for I . \n\n here Starfield absolutely and firmly fall into that camp . it be a great foundation for what be to come . \n do not get I wrong , I have be enjoy the experience and I will continue to do so , but I be look forward to mod buff out the Bethesda quirk and menu annoyance , and hopefully some reason to build an outpost ( because right now there be not one ) . \n\n currently ... I think I will give this a 6.5 or 7 out of 10 . top .',
+'review_date': '2023-09-11 23:48:12',
+'review_id': '146138594',
+'score': 1,
+'steam_purchase': True,
+'received_for_free': False
+
+
+Ce dataset comporte 23147 mot en anglais.
+La longueur du corps du commentaire peut varier
+
+
+- **Créé par:** Pauline DEGEZ
+- **Langue(s) (NLP):** English
+
+
+## Uses
+
+
+Ce dataset a été créé en priorité pour faire de la classification.
+
+### Direct Use
+
+Reconnaître des commentaires positifs sans score à des buts statistiques.
+
+### Out-of-Scope Use
+
+Ce dataset est très petit. Il n'est donc pas en l'état en mesure d'être très précis.
+
+## Dataset Structure
+
+
+## Dataset Creation
+
+### Source Data
+
+La source des données est la page steam de Starfield : https://store.steampowered.com/appreviews/1716740?json=1
+
+#### Data Collection and Processing
+
+Ces données ont été récupérées depuis la page internet à l'aide de request.
+
+#### Who are the source data producers?
+
+Les data récupérées ont été écrites par des utilisateurs steam.
+
